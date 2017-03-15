@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+<package name="com.struts.div" extends="struts-default">
+
+<global-results>  
+<result name="error">error.jsp</result>  
+</global-results> 
+
+<global-exception-mappings>
+      <exception-mapping exception="java.lang.ArithmeticException" result="error" />
+</global-exception-mappings>
+
+ <action name="div" class="com.struts.test.PojoTest" method="test">
+     <result name="Success">/result.jsp</result>
+ </action>
+ 
+  <action name="div1" class="com.struts.test.WelcomeController" method="test">
+  <!-- 	<interceptor-ref name="defaultStack"></interceptor-ref>
+
+    <interceptor-ref name="validation"> 
+        <param name="excludeMethods">test</param>
+    </interceptor-ref>  -->
+     <result name="Success">/result.jsp</result>
+ </action>
+</package>
+
+<include file="struts-multiple.xml"></include>
+
+</struts>

@@ -1,0 +1,23 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "D:\Ec\Workspace-Ext\Struts2Test\src\com\struts\test\xwork-validator-1.0.3.dtd">
+        
+        <!-- Common validator field name based -->
+        <!-- https://struts.apache.org/docs/stringlength-validator.html -->
+        
+<validators>
+    <field name="name">
+        <field-validator type="requiredstring">
+            <message>Field can't be empty !!</message>
+        </field-validator>
+    </field>    
+    <field name="pass">
+    <field-validator type="requiredstring">
+            <message>Password can't be empty!!!</message>
+        </field-validator>
+        <field-validator type="stringlength">
+        <param name="minLength">3</param>  
+        <param name="maxLength">6</param>  
+            <message>Password length should be 3 to 6 !!!</message>
+        </field-validator>
+    </field>
+</validators>
